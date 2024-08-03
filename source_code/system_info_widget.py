@@ -31,7 +31,7 @@ class SystemInfoWidget(QWidget):
         # Создание текстового поля
         self.text_edit = QTextEdit(self)
         self.text_edit.setReadOnly(True)
-        self.text_edit.setStyleSheet("background-color: transparent; color: white;")
+        self.text_edit.setStyleSheet("background-color: transparent; color: #BFFF00;")
         font = self.text_edit.font()
         font.setPixelSize(14)
         self.text_edit.setFont(font)
@@ -41,19 +41,31 @@ class SystemInfoWidget(QWidget):
         # Создание флажков
         self.battery_checkbox = QCheckBox("Батарея")
         self.battery_checkbox.setChecked(True)
+        self.battery_checkbox.setStyleSheet("color: red;")
+        
         self.cpu_checkbox = QCheckBox("Общая загрузка процессора")
         self.cpu_checkbox.setChecked(True)
+        self.cpu_checkbox.setStyleSheet("color: red;)
+        
         self.virtual_memory_checkbox = QCheckBox("Виртуальная память")
         self.virtual_memory_checkbox.setChecked(True)
+        self.virtual_memory_checkbox.setStyleSheet("color: red;")
+        
         self.boot_time_checkbox = QCheckBox("Время загрузки системы")
         self.boot_time_checkbox.setChecked(True)
+        self.boot_time_checkbox.setStyleSheet("color: red;")
+        
         self.cpu_temp_checkbox = QCheckBox("Температура процессора")
         self.cpu_temp_checkbox.setChecked(True)
+        self.cpu_temp_checkbox.setStyleSheet("color: red;")
 
         # Создание кнопки скрытия
         self.hide_button = QPushButton("Показать параметры")
         self.hide_button.clicked.connect(self.hide_parameters)
-
+        # self.hide_button.setStyleSheet("background-color: #007BFF; color: white;")
+        # Расскомментировав параметр выше вы сделает кнопку ПОКАЗАТЬ ПАРАМЕТРЫ с синим фоном и белым шрифтом.
+        # Но есть риск, что этим самым полетят тесты, но видимость виджета как на белом так и на чёрном фоне станет лучше.
+        
         # Создание ползунка размера шрифта
         self.font_size_slider = QSlider(Qt.Horizontal, self)
         self.font_size_slider.setMinimum(8)
