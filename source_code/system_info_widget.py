@@ -45,7 +45,7 @@ class SystemInfoWidget(QWidget):
         
         self.cpu_checkbox = QCheckBox("Общая загрузка процессора")
         self.cpu_checkbox.setChecked(True)
-        self.cpu_checkbox.setStyleSheet("color: red;)
+        self.cpu_checkbox.setStyleSheet("color: red;")
         
         self.virtual_memory_checkbox = QCheckBox("Виртуальная память")
         self.virtual_memory_checkbox.setChecked(True)
